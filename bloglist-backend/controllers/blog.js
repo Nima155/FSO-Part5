@@ -58,7 +58,7 @@ blogRouter.delete(
 			// functional programming.. not mutating the original array
 			const copyOfBlogs = request.user.blogs.concat()
 			// remove the removed blog from the user blogs list as well
-			copyOfBlogs.splice(copyOfBlogs.indexOf(dataToDelete), 1)
+			copyOfBlogs.splice(copyOfBlogs.indexOf(dataToDelete.id), 1)
 			request.user.blogs = copyOfBlogs
 			// actually remove from the database
 			await request.user.save()
